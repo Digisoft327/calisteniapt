@@ -1,0 +1,9 @@
+/vendor
+/node_modules
+/uploads
+.env
+*.log
+*.sql
+*.tar.gz
+.DS_Store
+config/database.php
