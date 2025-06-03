@@ -1,0 +1,29 @@
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    
+    # Redirecionar www para non-www
+    RewriteCond %{HTTP_HOST} ^www\.calisteniapt\.pt [NC]
+    RewriteRule ^(.*)$ https://calisteniapt.pt/$1 [L,R=301]
+    
+    # Forçar HTTPS
+    RewriteCond %{HTTPS} off
+    RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+    
+    # Front Controller
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteRule ^(.*)$ index.php?url=$1 [QSA,L]
+    
+    # Bloquear acesso a arquivos sensíveis
+    <FilesMatch "\.(env|log|sql|htaccess)$">
+        Order allow,deny
+        Deny from all
+    </FilesMatch>
+</IfModule>
+
+# Configurações de Segurança Adicionais
+Options -Indexes
+FileETag None
+Header unset ETag
+Header always set X-Content-Type-Options "nosniff"
+Header set X-Frame-Options "SAMEORIGIN"

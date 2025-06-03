@@ -1,0 +1,85 @@
+/* Cores Temáticas */
+:root {
+    --cali-primary: #FFD700;  /* Dourado */
+    --cali-secondary: #212529; /* Cinza escuro */
+    --cali-accent: #DC3545;   /* Vermelho */
+}
+
+/* Efeitos de Hover */
+.card-hover {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card-hover:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 0.5rem 1rem rgba(0,0,0,0.15);
+}
+
+/* Botões Customizados */
+.btn-cali-primary {
+    background: var(--cali-primary);
+    border: none;
+    color: var(--cali-secondary);
+    font-weight: 600;
+}
+
+.btn-cali-primary:hover {
+    background: #FFC107;
+    color: var(--cali-secondary);
+}
+
+/* Navbar Customizada */
+.navbar-cali {
+    background: linear-gradient(to right, #1a1a1a, #2d2d2d);
+    border-bottom: 2px solid var(--cali-primary);
+}
+
+/* Cards de Eventos */
+.event-card {
+    background: var(--cali-secondary);
+    border: 1px solid var(--cali-primary);
+    border-radius: 15px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.event-card img {
+    height: 200px;
+    object-fit: cover;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+}
+
+.event-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+}
+
+/* Breadcrumb */
+.breadcrumb {
+    background-color: transparent;
+    padding: 0;
+    margin-bottom: 1.5rem;
+}
+
+.breadcrumb-item a {
+    text-decoration: none;
+    color: #6c757d;
+}
+
+.breadcrumb-item.active {
+    color: #ffc107;
+}
+
+/* Form Styles */
+.form-control:focus {
+    border-color: #ffc107;
+    box-shadow: 0 0 0 0.25rem rgba(255, 193, 7, 0.25);
+}
+
+/* Badges */
+.badge {
+    font-weight: 500;
+    padding: 0.5em 0.8em;
+}
